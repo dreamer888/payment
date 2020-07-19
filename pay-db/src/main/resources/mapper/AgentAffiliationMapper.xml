@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyoufu.pay.mapper.AgentAffiliationMapper">
+  <resultMap id="BaseResultMap" type="com.heyoufu.pay.model.AgentAffiliation">
+    <!--@mbg.generated-->
+    <!--@Table agent_affiliation-->
+    <id column="id" jdbcType="BIGINT" property="id" typeHandler="com.heyoufu.pay.handler.UUIDTypeHandler" />
+    <result column="agent_id" jdbcType="BIGINT" property="agentId" />
+    <result column="sub_agent_id" jdbcType="BIGINT" property="subAgentId" />
+    <result column="sub_agent_no" jdbcType="VARCHAR" property="subAgentNo" />
+    <result column="sub_agent_name" jdbcType="VARCHAR" property="subAgentName" />
+    <result column="sub_merchant_id" jdbcType="BIGINT" property="subMerchantId" />
+    <result column="sub_merchant_no" jdbcType="VARCHAR" property="subMerchantNo" />
+    <result column="sub_merchant_name" jdbcType="VARCHAR" property="subMerchantName" />
+    <result column="create_user" jdbcType="BIGINT" property="createUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_user" jdbcType="BIGINT" property="updateUser" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, agent_id, sub_agent_id, sub_agent_no, sub_agent_name, sub_merchant_id, sub_merchant_no, 
+    sub_merchant_name, create_user, create_time, update_user, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.util.UUID" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from agent_affiliation
+    where id = #{id,jdbcType=BIGINT,typeHandler=com.heyoufu.pay.handler.UUIDTypeHandler}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.util.UUID">
+    <!--@mbg.generated-->
+    delete from agent_affiliation
+    where id = #{id,jdbcType=BIGINT,typeHandler=com.heyoufu.pay.handler.UUIDTypeHandler}
+  </delete>
+  <insert id="insert" parameterType="com.heyoufu.pay.model.AgentAffiliation">
+    <!--@mbg.generated-->
+    insert into agent_affiliation (id, 
+      agent_id, sub_agent_id, sub_agent_no, 
+      sub_agent_name, sub_merchant_id, sub_merchant_no, 
+      sub_merchant_name, create_user, create_time, 
+      update_user, update_time)
+    values (#{id,jdbcType=BIGINT,},
+      #{agentId,jdbcType=BIGINT}, #{subAgentId,jdbcType=BIGINT}, #{subAgentNo,jdbcType=VARCHAR}, 
+      #{subAgentName,jdbcType=VARCHAR}, #{subMerchantId,jdbcType=BIGINT}, #{subMerchantNo,jdbcType=VARCHAR}, 
+      #{subMerchantName,jdbcType=VARCHAR}, #{createUser,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateUser,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.heyoufu.pay.model.AgentAffiliation">
+    <!--@mbg.generated-->
+    insert into agent_affiliation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="agentId != null">
+        agent_id,
+      </if>
+      <if test="subAgentId != null">
+        sub_agent_id,
+      </if>
+      <if test="subAgentNo != null">
+        sub_agent_no,
+      </if>
+      <if test="subAgentName != null">
+        sub_agent_name,
+      </if>
+      <if test="subMerchantId != null">
+        sub_merchant_id,
+      </if>
+      <if test="subMerchantNo != null">
+        sub_merchant_no,
+      </if>
+      <if test="subMerchantName != null">
+        sub_merchant_name,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT,typeHandler=com.heyoufu.pay.handler.UUIDTypeHandler},
+      </if>
+      <if test="agentId != null">
+        #{agentId,jdbcType=BIGINT},
+      </if>
+      <if test="subAgentId != null">
+        #{subAgentId,jdbcType=BIGINT},
+      </if>
+      <if test="subAgentNo != null">
+        #{subAgentNo,jdbcType=VARCHAR},
+      </if>
+      <if test="subAgentName != null">
+        #{subAgentName,jdbcType=VARCHAR},
+      </if>
+      <if test="subMerchantId != null">
+        #{subMerchantId,jdbcType=BIGINT},
+      </if>
+      <if test="subMerchantNo != null">
+        #{subMerchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="subMerchantName != null">
+        #{subMerchantName,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.heyoufu.pay.model.AgentAffiliation">
+    <!--@mbg.generated-->
+    update agent_affiliation
+    <set>
+      <if test="agentId != null">
+        agent_id = #{agentId,jdbcType=BIGINT},
+      </if>
+      <if test="subAgentId != null">
+        sub_agent_id = #{subAgentId,jdbcType=BIGINT},
+      </if>
+      <if test="subAgentNo != null">
+        sub_agent_no = #{subAgentNo,jdbcType=VARCHAR},
+      </if>
+      <if test="subAgentName != null">
+        sub_agent_name = #{subAgentName,jdbcType=VARCHAR},
+      </if>
+      <if test="subMerchantId != null">
+        sub_merchant_id = #{subMerchantId,jdbcType=BIGINT},
+      </if>
+      <if test="subMerchantNo != null">
+        sub_merchant_no = #{subMerchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="subMerchantName != null">
+        sub_merchant_name = #{subMerchantName,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT,typeHandler=com.heyoufu.pay.handler.UUIDTypeHandler}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.heyoufu.pay.model.AgentAffiliation">
+    <!--@mbg.generated-->
+    update agent_affiliation
+    set agent_id = #{agentId,jdbcType=BIGINT},
+      sub_agent_id = #{subAgentId,jdbcType=BIGINT},
+      sub_agent_no = #{subAgentNo,jdbcType=VARCHAR},
+      sub_agent_name = #{subAgentName,jdbcType=VARCHAR},
+      sub_merchant_id = #{subMerchantId,jdbcType=BIGINT},
+      sub_merchant_no = #{subMerchantNo,jdbcType=VARCHAR},
+      sub_merchant_name = #{subMerchantName,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT,typeHandler=com.heyoufu.pay.handler.UUIDTypeHandler}
+  </update>
+  <select id="findAgentSonAndAgent" parameterType="java.util.UUID" resultMap="BaseResultMap">
+    select * from agent_affiliation where agent_no = #{agentNo} and affiliation_category = '代理商对代理商';
+  </select>
+
+</mapper>

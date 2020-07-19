@@ -1,0 +1,28 @@
+server:
+  port: 8309
+spring:
+  application:
+    name: pay-boigdata
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:postgresql://www.dreammm.net:25432/postgres
+    username: postgres
+    password: 123
+  # redis配置
+  redis:
+    database: 2
+    host: www.dreammm.net
+    port: 26379
+    password: Az741
+
+management: #开启SpringBoot Admin的监控
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyoufu.pay.mapper.IndustryTypeMapper">
+  <resultMap id="BaseResultMap" type="com.heyoufu.pay.model.IndustryType">
+    <!--@mbg.generated-->
+    <!--@Table industry_type-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="business_type_first" jdbcType="VARCHAR" property="businessTypeFirst" />
+    <result column="business_type_second" jdbcType="VARCHAR" property="businessTypeSecond" />
+    <result column="business_type_thirdly" jdbcType="VARCHAR" property="businessTypeThirdly" />
+    <result column="mcc_code" jdbcType="VARCHAR" property="mccCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, business_type_first, business_type_second, business_type_thirdly, mcc_code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from industry_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from industry_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.heyoufu.pay.model.IndustryType">
+    <!--@mbg.generated-->
+    insert into industry_type (id, business_type_first, business_type_second, 
+      business_type_thirdly, mcc_code)
+    values (#{id,jdbcType=BIGINT}, #{businessTypeFirst,jdbcType=VARCHAR}, #{businessTypeSecond,jdbcType=VARCHAR}, 
+      #{businessTypeThirdly,jdbcType=VARCHAR}, #{mccCode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.heyoufu.pay.model.IndustryType">
+    <!--@mbg.generated-->
+    insert into industry_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="businessTypeFirst != null">
+        business_type_first,
+      </if>
+      <if test="businessTypeSecond != null">
+        business_type_second,
+      </if>
+      <if test="businessTypeThirdly != null">
+        business_type_thirdly,
+      </if>
+      <if test="mccCode != null">
+        mcc_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="businessTypeFirst != null">
+        #{businessTypeFirst,jdbcType=VARCHAR},
+      </if>
+      <if test="businessTypeSecond != null">
+        #{businessTypeSecond,jdbcType=VARCHAR},
+      </if>
+      <if test="businessTypeThirdly != null">
+        #{businessTypeThirdly,jdbcType=VARCHAR},
+      </if>
+      <if test="mccCode != null">
+        #{mccCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.heyoufu.pay.model.IndustryType">
+    <!--@mbg.generated-->
+    update industry_type
+    <set>
+      <if test="businessTypeFirst != null">
+        business_type_first = #{businessTypeFirst,jdbcType=VARCHAR},
+      </if>
+      <if test="businessTypeSecond != null">
+        business_type_second = #{businessTypeSecond,jdbcType=VARCHAR},
+      </if>
+      <if test="businessTypeThirdly != null">
+        business_type_thirdly = #{businessTypeThirdly,jdbcType=VARCHAR},
+      </if>
+      <if test="mccCode != null">
+        mcc_code = #{mccCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.heyoufu.pay.model.IndustryType">
+    <!--@mbg.generated-->
+    update industry_type
+    set business_type_first = #{businessTypeFirst,jdbcType=VARCHAR},
+      business_type_second = #{businessTypeSecond,jdbcType=VARCHAR},
+      business_type_thirdly = #{businessTypeThirdly,jdbcType=VARCHAR},
+      mcc_code = #{mccCode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

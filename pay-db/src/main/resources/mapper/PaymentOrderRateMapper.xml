@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyoufu.pay.mapper.PaymentOrderRateMapper">
+  <resultMap id="BaseResultMap" type="com.heyoufu.pay.model.PaymentOrderRate">
+    <!--@mbg.generated-->
+    <!--@Table payment_order_rate-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="rate_type" jdbcType="VARCHAR" property="rateType" />
+    <result column="upstream_merchant_no" jdbcType="VARCHAR" property="upstreamMerchantNo" />
+    <result column="rate" jdbcType="NUMERIC" property="rate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, rate_type, upstream_merchant_no, rate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from payment_order_rate
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from payment_order_rate
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.heyoufu.pay.model.PaymentOrderRate">
+    <!--@mbg.generated-->
+    insert into payment_order_rate (id, rate_type, upstream_merchant_no, 
+      rate)
+    values (#{id,jdbcType=BIGINT}, #{rateType,jdbcType=VARCHAR}, #{upstreamMerchantNo,jdbcType=VARCHAR}, 
+      #{rate,jdbcType=NUMERIC})
+  </insert>
+  <insert id="insertSelective" parameterType="com.heyoufu.pay.model.PaymentOrderRate">
+    <!--@mbg.generated-->
+    insert into payment_order_rate
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="rateType != null">
+        rate_type,
+      </if>
+      <if test="upstreamMerchantNo != null">
+        upstream_merchant_no,
+      </if>
+      <if test="rate != null">
+        rate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="rateType != null">
+        #{rateType,jdbcType=VARCHAR},
+      </if>
+      <if test="upstreamMerchantNo != null">
+        #{upstreamMerchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null">
+        #{rate,jdbcType=NUMERIC},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.heyoufu.pay.model.PaymentOrderRate">
+    <!--@mbg.generated-->
+    update payment_order_rate
+    <set>
+      <if test="rateType != null">
+        rate_type = #{rateType,jdbcType=VARCHAR},
+      </if>
+      <if test="upstreamMerchantNo != null">
+        upstream_merchant_no = #{upstreamMerchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null">
+        rate = #{rate,jdbcType=NUMERIC},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.heyoufu.pay.model.PaymentOrderRate">
+    <!--@mbg.generated-->
+    update payment_order_rate
+    set rate_type = #{rateType,jdbcType=VARCHAR},
+      upstream_merchant_no = #{upstreamMerchantNo,jdbcType=VARCHAR},
+      rate = #{rate,jdbcType=NUMERIC}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

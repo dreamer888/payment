@@ -1,0 +1,29 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+    registry-fetch-interval-seconds: 10
+    instance:
+      prefer-ip-address: true
+
+spring:
+  # 数据库配置
+  datasource:
+    url: jdbc:postgresql://192.168.1.230:25432/hefutong
+    username: postgres
+    password: Az123..
+
+  cloud:
+    config:
+      profile: dev #启用环境名称
+      label: master #分支名称
+      name: agent #配置文件名称
+      discovery:
+        enabled: true
+        service-id: pay-config
+
+auth:
+  host: localhost
+  # 服务端口号
+  port: 9000
+

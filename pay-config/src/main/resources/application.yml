@@ -1,0 +1,18 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: pay-config
+  profiles:
+    active: native #使用本地配置，要使用git存储改为git即可
+  cloud:
+    config:
+      server:
+        native: #本地仓库存储
+          search-locations: classpath:/config/{application}
+        git: #Git仓库存储
+          uri: https://gitee.com/xxx/pay-config.git
+          username: user
+          password: pwd
+          clone-on-start: true
+          search-paths: '{application}'

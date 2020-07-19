@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyoufu.pay.mapper.MerchantInfoMapper">
+  <resultMap id="BaseResultMap" type="com.heyoufu.pay.model.MerchantInfo">
+    <!--@mbg.generated-->
+    <!--@Table merchant_info-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="merchant_no" jdbcType="VARCHAR" property="merchantNo" />
+    <result column="create_user" jdbcType="BIGINT" property="createUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_user" jdbcType="BIGINT" property="updateUser" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="merchant_type" jdbcType="VARCHAR" property="merchantType" />
+    <result column="merchant_name" jdbcType="VARCHAR" property="merchantName" />
+    <result column="merchant_short_name" jdbcType="VARCHAR" property="merchantShortName" />
+    <result column="corporate_name" jdbcType="VARCHAR" property="corporateName" />
+    <result column="corporate_id_card_no" jdbcType="VARCHAR" property="corporateIdCardNo" />
+    <result column="corporate_id_card_begin_date" jdbcType="TIMESTAMP" property="corporateIdCardBeginDate" />
+    <result column="corporate_id_card_end_date" jdbcType="TIMESTAMP" property="corporateIdCardEndDate" />
+    <result column="corporate_phone" jdbcType="VARCHAR" property="corporatePhone" />
+    <result column="corporate_id_card_type" jdbcType="VARCHAR" property="corporateIdCardType" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="id_card_no" jdbcType="VARCHAR" property="idCardNo" />
+    <result column="id_card_begin_date" jdbcType="TIMESTAMP" property="idCardBeginDate" />
+    <result column="id_card_end_date" jdbcType="TIMESTAMP" property="idCardEndDate" />
+    <result column="id_card_type" jdbcType="VARCHAR" property="idCardType" />
+    <result column="residence_province_code" jdbcType="VARCHAR" property="residenceProvinceCode" />
+    <result column="residence_city_code" jdbcType="VARCHAR" property="residenceCityCode" />
+    <result column="residence_district_code" jdbcType="VARCHAR" property="residenceDistrictCode" />
+    <result column="residence_address" jdbcType="VARCHAR" property="residenceAddress" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="nationality" jdbcType="VARCHAR" property="nationality" />
+    <result column="business_license_begin_date" jdbcType="TIMESTAMP" property="businessLicenseBeginDate" />
+    <result column="business_license_end_date" jdbcType="TIMESTAMP" property="businessLicenseEndDate" />
+    <result column="business_license_no" jdbcType="VARCHAR" property="businessLicenseNo" />
+    <result column="province_code" jdbcType="VARCHAR" property="provinceCode" />
+    <result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+    <result column="district_code" jdbcType="VARCHAR" property="districtCode" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="id_card_province_code" jdbcType="VARCHAR" property="idCardProvinceCode" />
+    <result column="id_card_city_code" jdbcType="VARCHAR" property="idCardCityCode" />
+    <result column="id_card_district_code" jdbcType="VARCHAR" property="idCardDistrictCode" />
+    <result column="id_card_address" jdbcType="VARCHAR" property="idCardAddress" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="bank_card_name" jdbcType="VARCHAR" property="bankCardName" />
+    <result column="bank_card_no" jdbcType="VARCHAR" property="bankCardNo" />
+    <result column="bank_no" jdbcType="VARCHAR" property="bankNo" />
+    <result column="cnaps_no" jdbcType="VARCHAR" property="cnapsNo" />
+    <result column="sub_branch_bank_name" jdbcType="VARCHAR" property="subBranchBankName" />
+    <result column="bank_phone" jdbcType="VARCHAR" property="bankPhone" />
+    <result column="deposit_bank_province_code" jdbcType="VARCHAR" property="depositBankProvinceCode" />
+    <result column="deposit_bank_city_code" jdbcType="VARCHAR" property="depositBankCityCode" />
+    <result column="service_phone" jdbcType="VARCHAR" property="servicePhone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="industry_type" jdbcType="VARCHAR" property="industryType" />
+    <result column="contact_name" jdbcType="VARCHAR" property="contactName" />
+    <result column="contact_phone" jdbcType="VARCHAR" property="contactPhone" />
+    <result column="contact_email" jdbcType="VARCHAR" property="contactEmail" />
+    <result column="contact_id_card_type" jdbcType="VARCHAR" property="contactIdCardType" />
+    <result column="contact_id_card_no" jdbcType="VARCHAR" property="contactIdCardNo" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="company_address" jdbcType="VARCHAR" property="companyAddress" />
+    <result column="company_nature" jdbcType="VARCHAR" property="companyNature" />
+    <result column="user_avatar_img" jdbcType="VARCHAR" property="userAvatarImg" />
+    <result column="business_license_img" jdbcType="VARCHAR" property="businessLicenseImg" />
+    <result column="protocol_first_img" jdbcType="VARCHAR" property="protocolFirstImg" />
+    <result column="protocol_last_img" jdbcType="VARCHAR" property="protocolLastImg" />
+    <result column="id_card_front_img" jdbcType="VARCHAR" property="idCardFrontImg" />
+    <result column="id_card_back_img" jdbcType="VARCHAR" property="idCardBackImg" />
+    <result column="id_card_hand_img" jdbcType="VARCHAR" property="idCardHandImg" />
+    <result column="store_img" jdbcType="VARCHAR" property="storeImg" />
+    <result column="bank_license_img" jdbcType="VARCHAR" property="bankLicenseImg" />
+    <result column="ic_net_screen_shot_img" jdbcType="VARCHAR" property="icNetScreenShotImg" />
+    <result column="icp_img" jdbcType="VARCHAR" property="icpImg" />
+    <result column="place_img" jdbcType="VARCHAR" property="placeImg" />
+    <result column="bank_card_front_img" jdbcType="VARCHAR" property="bankCardFrontImg" />
+    <result column="bank_card_back_img" jdbcType="VARCHAR" property="bankCardBackImg" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, merchant_no, create_user, create_time, update_user, update_time, merchant_type, 
+    merchant_name, merchant_short_name, corporate_name, corporate_id_card_no, corporate_id_card_begin_date, 
+    corporate_id_card_end_date, corporate_phone, corporate_id_card_type, "name", phone, 
+    id_card_no, id_card_begin_date, id_card_end_date, id_card_type, residence_province_code, 
+    residence_city_code, residence_district_code, residence_address, nation, gender, 
+    nationality, business_license_begin_date, business_license_end_date, business_license_no, 
+    province_code, city_code, district_code, address, id_card_province_code, id_card_city_code, 
+    id_card_district_code, id_card_address, longitude, latitude, code, bank_card_name, 
+    bank_card_no, bank_no, cnaps_no, sub_branch_bank_name, bank_phone, deposit_bank_province_code, 
+    deposit_bank_city_code, service_phone, email, industry_type, contact_name, contact_phone, 
+    contact_email, contact_id_card_type, contact_id_card_no, company_name, company_address, 
+    company_nature, user_avatar_img, business_license_img, protocol_first_img, protocol_last_img, 
+    id_card_front_img, id_card_back_img, id_card_hand_img, store_img, bank_license_img, 
+    ic_net_screen_shot_img, icp_img, place_img, bank_card_front_img, bank_card_back_img, 
+    user_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from merchant_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from merchant_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.heyoufu.pay.model.MerchantInfo">
+    <!--@mbg.generated-->
+    insert into merchant_info (id, merchant_no, create_user, 
+      create_time, update_user, update_time, 
+      merchant_type, merchant_name, merchant_short_name, 
+      corporate_name, corporate_id_card_no, corporate_id_card_begin_date, 
+      corporate_id_card_end_date, corporate_phone, 
+      corporate_id_card_type, "name", phone, 
+      id_card_no, id_card_begin_date, id_card_end_date, 
+      id_card_type, residence_province_code, residence_city_code, 
+      residence_district_code, residence_address, 
+      nation, gender, nationality, 
+      business_license_begin_date, business_license_end_date, 
+      business_license_no, province_code, city_code, 
+      district_code, address, id_card_province_code, 
+      id_card_city_code, id_card_district_code, id_card_address, 
+      longitude, latitude, code, 
+      bank_card_name, bank_card_no, bank_no, 
+      cnaps_no, sub_branch_bank_name, bank_phone, 
+      deposit_bank_province_code, deposit_bank_city_code, 
+      service_phone, email, industry_type, 
+      contact_name, contact_phone, contact_email, 
+      contact_id_card_type, contact_id_card_no, company_name, 
+      company_address, company_nature, user_avatar_img, 
+      business_license_img, protocol_first_img, protocol_last_img, 
+      id_card_front_img, id_card_back_img, id_card_hand_img, 
+      store_img, bank_license_img, ic_net_screen_shot_img, 
+      icp_img, place_img, bank_card_front_img, 
+      bank_card_back_img, user_id)
+    values (#{id,jdbcType=BIGINT}, #{merchantNo,jdbcType=VARCHAR}, #{createUser,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{merchantType,jdbcType=VARCHAR}, #{merchantName,jdbcType=VARCHAR}, #{merchantShortName,jdbcType=VARCHAR}, 
+      #{corporateName,jdbcType=VARCHAR}, #{corporateIdCardNo,jdbcType=VARCHAR}, #{corporateIdCardBeginDate,jdbcType=TIMESTAMP}, 
+      #{corporateIdCardEndDate,jdbcType=TIMESTAMP}, #{corporatePhone,jdbcType=VARCHAR}, 
+      #{corporateIdCardType,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{idCardNo,jdbcType=VARCHAR}, #{idCardBeginDate,jdbcType=TIMESTAMP}, #{idCardEndDate,jdbcType=TIMESTAMP}, 
+      #{idCardType,jdbcType=VARCHAR}, #{residenceProvinceCode,jdbcType=VARCHAR}, #{residenceCityCode,jdbcType=VARCHAR}, 
+      #{residenceDistrictCode,jdbcType=VARCHAR}, #{residenceAddress,jdbcType=VARCHAR}, 
+      #{nation,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{nationality,jdbcType=VARCHAR}, 
+      #{businessLicenseBeginDate,jdbcType=TIMESTAMP}, #{businessLicenseEndDate,jdbcType=TIMESTAMP}, 
+      #{businessLicenseNo,jdbcType=VARCHAR}, #{provinceCode,jdbcType=VARCHAR}, #{cityCode,jdbcType=VARCHAR}, 
+      #{districtCode,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{idCardProvinceCode,jdbcType=VARCHAR}, 
+      #{idCardCityCode,jdbcType=VARCHAR}, #{idCardDistrictCode,jdbcType=VARCHAR}, #{idCardAddress,jdbcType=VARCHAR}, 
+      #{longitude,jdbcType=VARCHAR}, #{latitude,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{bankCardName,jdbcType=VARCHAR}, #{bankCardNo,jdbcType=VARCHAR}, #{bankNo,jdbcType=VARCHAR}, 
+      #{cnapsNo,jdbcType=VARCHAR}, #{subBranchBankName,jdbcType=VARCHAR}, #{bankPhone,jdbcType=VARCHAR}, 
+      #{depositBankProvinceCode,jdbcType=VARCHAR}, #{depositBankCityCode,jdbcType=VARCHAR}, 
+      #{servicePhone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{industryType,jdbcType=VARCHAR}, 
+      #{contactName,jdbcType=VARCHAR}, #{contactPhone,jdbcType=VARCHAR}, #{contactEmail,jdbcType=VARCHAR}, 
+      #{contactIdCardType,jdbcType=VARCHAR}, #{contactIdCardNo,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}, 
+      #{companyAddress,jdbcType=VARCHAR}, #{companyNature,jdbcType=VARCHAR}, #{userAvatarImg,jdbcType=VARCHAR}, 
+      #{businessLicenseImg,jdbcType=VARCHAR}, #{protocolFirstImg,jdbcType=VARCHAR}, #{protocolLastImg,jdbcType=VARCHAR}, 
+      #{idCardFrontImg,jdbcType=VARCHAR}, #{idCardBackImg,jdbcType=VARCHAR}, #{idCardHandImg,jdbcType=VARCHAR}, 
+      #{storeImg,jdbcType=VARCHAR}, #{bankLicenseImg,jdbcType=VARCHAR}, #{icNetScreenShotImg,jdbcType=VARCHAR}, 
+      #{icpImg,jdbcType=VARCHAR}, #{placeImg,jdbcType=VARCHAR}, #{bankCardFrontImg,jdbcType=VARCHAR}, 
+      #{bankCardBackImg,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.heyoufu.pay.model.MerchantInfo">
+    <!--@mbg.generated-->
+    insert into merchant_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="merchantNo != null">
+        merchant_no,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="merchantType != null">
+        merchant_type,
+      </if>
+      <if test="merchantName != null">
+        merchant_name,
+      </if>
+      <if test="merchantShortName != null">
+        merchant_short_name,
+      </if>
+      <if test="corporateName != null">
+        corporate_name,
+      </if>
+      <if test="corporateIdCardNo != null">
+        corporate_id_card_no,
+      </if>
+      <if test="corporateIdCardBeginDate != null">
+        corporate_id_card_begin_date,
+      </if>
+      <if test="corporateIdCardEndDate != null">
+        corporate_id_card_end_date,
+      </if>
+      <if test="corporatePhone != null">
+        corporate_phone,
+      </if>
+      <if test="corporateIdCardType != null">
+        corporate_id_card_type,
+      </if>
+      <if test="name != null">
+        "name",
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="idCardNo != null">
+        id_card_no,
+      </if>
+      <if test="idCardBeginDate != null">
+        id_card_begin_date,
+      </if>
+      <if test="idCardEndDate != null">
+        id_card_end_date,
+      </if>
+      <if test="idCardType != null">
+        id_card_type,
+      </if>
+      <if test="residenceProvinceCode != null">
+        residence_province_code,
+      </if>
+      <if test="residenceCityCode != null">
+        residence_city_code,
+      </if>
+      <if test="residenceDistrictCode != null">
+        residence_district_code,
+      </if>
+      <if test="residenceAddress != null">
+        residence_address,
+      </if>
+      <if test="nation != null">
+        nation,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="nationality != null">
+        nationality,
+      </if>
+      <if test="businessLicenseBeginDate != null">
+        business_license_begin_date,
+      </if>
+      <if test="businessLicenseEndDate != null">
+        business_license_end_date,
+      </if>
+      <if test="businessLicenseNo != null">
+        business_license_no,
+      </if>
+      <if test="provinceCode != null">
+        province_code,
+      </if>
+      <if test="cityCode != null">
+        city_code,
+      </if>
+      <if test="districtCode != null">
+        district_code,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="idCardProvinceCode != null">
+        id_card_province_code,
+      </if>
+      <if test="idCardCityCode != null">
+        id_card_city_code,
+      </if>
+      <if test="idCardDistrictCode != null">
+        id_card_district_code,
+      </if>
+      <if test="idCardAddress != null">
+        id_card_address,
+      </if>
+      <if test="longitude != null">
+        longitude,
+      </if>
+      <if test="latitude != null">
+        latitude,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="bankCardName != null">
+        bank_card_name,
+      </if>
+      <if test="bankCardNo != null">
+        bank_card_no,
+      </if>
+      <if test="bankNo != null">
+        bank_no,
+      </if>
+      <if test="cnapsNo != null">
+        cnaps_no,
+      </if>
+      <if test="subBranchBankName != null">
+        sub_branch_bank_name,
+      </if>
+      <if test="bankPhone != null">
+        bank_phone,
+      </if>
+      <if test="depositBankProvinceCode != null">
+        deposit_bank_province_code,
+      </if>
+      <if test="depositBankCityCode != null">
+        deposit_bank_city_code,
+      </if>
+      <if test="servicePhone != null">
+        service_phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="industryType != null">
+        industry_type,
+      </if>
+      <if test="contactName != null">
+        contact_name,
+      </if>
+      <if test="contactPhone != null">
+        contact_phone,
+      </if>
+      <if test="contactEmail != null">
+        contact_email,
+      </if>
+      <if test="contactIdCardType != null">
+        contact_id_card_type,
+      </if>
+      <if test="contactIdCardNo != null">
+        contact_id_card_no,
+      </if>
+      <if test="companyName != null">
+        company_name,
+      </if>
+      <if test="companyAddress != null">
+        company_address,
+      </if>
+      <if test="companyNature != null">
+        company_nature,
+      </if>
+      <if test="userAvatarImg != null">
+        user_avatar_img,
+      </if>
+      <if test="businessLicenseImg != null">
+        business_license_img,
+      </if>
+      <if test="protocolFirstImg != null">
+        protocol_first_img,
+      </if>
+      <if test="protocolLastImg != null">
+        protocol_last_img,
+      </if>
+      <if test="idCardFrontImg != null">
+        id_card_front_img,
+      </if>
+      <if test="idCardBackImg != null">
+        id_card_back_img,
+      </if>
+      <if test="idCardHandImg != null">
+        id_card_hand_img,
+      </if>
+      <if test="storeImg != null">
+        store_img,
+      </if>
+      <if test="bankLicenseImg != null">
+        bank_license_img,
+      </if>
+      <if test="icNetScreenShotImg != null">
+        ic_net_screen_shot_img,
+      </if>
+      <if test="icpImg != null">
+        icp_img,
+      </if>
+      <if test="placeImg != null">
+        place_img,
+      </if>
+      <if test="bankCardFrontImg != null">
+        bank_card_front_img,
+      </if>
+      <if test="bankCardBackImg != null">
+        bank_card_back_img,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="merchantNo != null">
+        #{merchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="merchantType != null">
+        #{merchantType,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantName != null">
+        #{merchantName,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantShortName != null">
+        #{merchantShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateName != null">
+        #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateIdCardNo != null">
+        #{corporateIdCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateIdCardBeginDate != null">
+        #{corporateIdCardBeginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="corporateIdCardEndDate != null">
+        #{corporateIdCardEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="corporatePhone != null">
+        #{corporatePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateIdCardType != null">
+        #{corporateIdCardType,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNo != null">
+        #{idCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardBeginDate != null">
+        #{idCardBeginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCardEndDate != null">
+        #{idCardEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCardType != null">
+        #{idCardType,jdbcType=VARCHAR},
+      </if>
+      <if test="residenceProvinceCode != null">
+        #{residenceProvinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="residenceCityCode != null">
+        #{residenceCityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="residenceDistrictCode != null">
+        #{residenceDistrictCode,jdbcType=VARCHAR},
+      </if>
+      <if test="residenceAddress != null">
+        #{residenceAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="nationality != null">
+        #{nationality,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseBeginDate != null">
+        #{businessLicenseBeginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessLicenseEndDate != null">
+        #{businessLicenseEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessLicenseNo != null">
+        #{businessLicenseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null">
+        #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null">
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="districtCode != null">
+        #{districtCode,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardProvinceCode != null">
+        #{idCardProvinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardCityCode != null">
+        #{idCardCityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardDistrictCode != null">
+        #{idCardDistrictCode,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardAddress != null">
+        #{idCardAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null">
+        #{longitude,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null">
+        #{latitude,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardName != null">
+        #{bankCardName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardNo != null">
+        #{bankCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bankNo != null">
+        #{bankNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cnapsNo != null">
+        #{cnapsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="subBranchBankName != null">
+        #{subBranchBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankPhone != null">
+        #{bankPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="depositBankProvinceCode != null">
+        #{depositBankProvinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="depositBankCityCode != null">
+        #{depositBankCityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="servicePhone != null">
+        #{servicePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="industryType != null">
+        #{industryType,jdbcType=VARCHAR},
+      </if>
+      <if test="contactName != null">
+        #{contactName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null">
+        #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="contactEmail != null">
+        #{contactEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="contactIdCardType != null">
+        #{contactIdCardType,jdbcType=VARCHAR},
+      </if>
+      <if test="contactIdCardNo != null">
+        #{contactIdCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddress != null">
+        #{companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="companyNature != null">
+        #{companyNature,jdbcType=VARCHAR},
+      </if>
+      <if test="userAvatarImg != null">
+        #{userAvatarImg,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseImg != null">
+        #{businessLicenseImg,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolFirstImg != null">
+        #{protocolFirstImg,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolLastImg != null">
+        #{protocolLastImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardFrontImg != null">
+        #{idCardFrontImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardBackImg != null">
+        #{idCardBackImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardHandImg != null">
+        #{idCardHandImg,jdbcType=VARCHAR},
+      </if>
+      <if test="storeImg != null">
+        #{storeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="bankLicenseImg != null">
+        #{bankLicenseImg,jdbcType=VARCHAR},
+      </if>
+      <if test="icNetScreenShotImg != null">
+        #{icNetScreenShotImg,jdbcType=VARCHAR},
+      </if>
+      <if test="icpImg != null">
+        #{icpImg,jdbcType=VARCHAR},
+      </if>
+      <if test="placeImg != null">
+        #{placeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardFrontImg != null">
+        #{bankCardFrontImg,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardBackImg != null">
+        #{bankCardBackImg,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.heyoufu.pay.model.MerchantInfo">
+    <!--@mbg.generated-->
+    update merchant_info
+    <set>
+      <if test="merchantNo != null">
+        merchant_no = #{merchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="merchantType != null">
+        merchant_type = #{merchantType,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantName != null">
+        merchant_name = #{merchantName,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantShortName != null">
+        merchant_short_name = #{merchantShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateName != null">
+        corporate_name = #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateIdCardNo != null">
+        corporate_id_card_no = #{corporateIdCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateIdCardBeginDate != null">
+        corporate_id_card_begin_date = #{corporateIdCardBeginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="corporateIdCardEndDate != null">
+        corporate_id_card_end_date = #{corporateIdCardEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="corporatePhone != null">
+        corporate_phone = #{corporatePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateIdCardType != null">
+        corporate_id_card_type = #{corporateIdCardType,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        "name" = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNo != null">
+        id_card_no = #{idCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardBeginDate != null">
+        id_card_begin_date = #{idCardBeginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCardEndDate != null">
+        id_card_end_date = #{idCardEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCardType != null">
+        id_card_type = #{idCardType,jdbcType=VARCHAR},
+      </if>
+      <if test="residenceProvinceCode != null">
+        residence_province_code = #{residenceProvinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="residenceCityCode != null">
+        residence_city_code = #{residenceCityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="residenceDistrictCode != null">
+        residence_district_code = #{residenceDistrictCode,jdbcType=VARCHAR},
+      </if>
+      <if test="residenceAddress != null">
+        residence_address = #{residenceAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        nation = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="nationality != null">
+        nationality = #{nationality,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseBeginDate != null">
+        business_license_begin_date = #{businessLicenseBeginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessLicenseEndDate != null">
+        business_license_end_date = #{businessLicenseEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessLicenseNo != null">
+        business_license_no = #{businessLicenseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null">
+        province_code = #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null">
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="districtCode != null">
+        district_code = #{districtCode,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardProvinceCode != null">
+        id_card_province_code = #{idCardProvinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardCityCode != null">
+        id_card_city_code = #{idCardCityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardDistrictCode != null">
+        id_card_district_code = #{idCardDistrictCode,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardAddress != null">
+        id_card_address = #{idCardAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null">
+        longitude = #{longitude,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null">
+        latitude = #{latitude,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardName != null">
+        bank_card_name = #{bankCardName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardNo != null">
+        bank_card_no = #{bankCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bankNo != null">
+        bank_no = #{bankNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cnapsNo != null">
+        cnaps_no = #{cnapsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="subBranchBankName != null">
+        sub_branch_bank_name = #{subBranchBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankPhone != null">
+        bank_phone = #{bankPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="depositBankProvinceCode != null">
+        deposit_bank_province_code = #{depositBankProvinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="depositBankCityCode != null">
+        deposit_bank_city_code = #{depositBankCityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="servicePhone != null">
+        service_phone = #{servicePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="industryType != null">
+        industry_type = #{industryType,jdbcType=VARCHAR},
+      </if>
+      <if test="contactName != null">
+        contact_name = #{contactName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null">
+        contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="contactEmail != null">
+        contact_email = #{contactEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="contactIdCardType != null">
+        contact_id_card_type = #{contactIdCardType,jdbcType=VARCHAR},
+      </if>
+      <if test="contactIdCardNo != null">
+        contact_id_card_no = #{contactIdCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null">
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddress != null">
+        company_address = #{companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="companyNature != null">
+        company_nature = #{companyNature,jdbcType=VARCHAR},
+      </if>
+      <if test="userAvatarImg != null">
+        user_avatar_img = #{userAvatarImg,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseImg != null">
+        business_license_img = #{businessLicenseImg,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolFirstImg != null">
+        protocol_first_img = #{protocolFirstImg,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolLastImg != null">
+        protocol_last_img = #{protocolLastImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardFrontImg != null">
+        id_card_front_img = #{idCardFrontImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardBackImg != null">
+        id_card_back_img = #{idCardBackImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardHandImg != null">
+        id_card_hand_img = #{idCardHandImg,jdbcType=VARCHAR},
+      </if>
+      <if test="storeImg != null">
+        store_img = #{storeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="bankLicenseImg != null">
+        bank_license_img = #{bankLicenseImg,jdbcType=VARCHAR},
+      </if>
+      <if test="icNetScreenShotImg != null">
+        ic_net_screen_shot_img = #{icNetScreenShotImg,jdbcType=VARCHAR},
+      </if>
+      <if test="icpImg != null">
+        icp_img = #{icpImg,jdbcType=VARCHAR},
+      </if>
+      <if test="placeImg != null">
+        place_img = #{placeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardFrontImg != null">
+        bank_card_front_img = #{bankCardFrontImg,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardBackImg != null">
+        bank_card_back_img = #{bankCardBackImg,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.heyoufu.pay.model.MerchantInfo">
+    <!--@mbg.generated-->
+    update merchant_info
+    set merchant_no = #{merchantNo,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      merchant_type = #{merchantType,jdbcType=VARCHAR},
+      merchant_name = #{merchantName,jdbcType=VARCHAR},
+      merchant_short_name = #{merchantShortName,jdbcType=VARCHAR},
+      corporate_name = #{corporateName,jdbcType=VARCHAR},
+      corporate_id_card_no = #{corporateIdCardNo,jdbcType=VARCHAR},
+      corporate_id_card_begin_date = #{corporateIdCardBeginDate,jdbcType=TIMESTAMP},
+      corporate_id_card_end_date = #{corporateIdCardEndDate,jdbcType=TIMESTAMP},
+      corporate_phone = #{corporatePhone,jdbcType=VARCHAR},
+      corporate_id_card_type = #{corporateIdCardType,jdbcType=VARCHAR},
+      "name" = #{name,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      id_card_no = #{idCardNo,jdbcType=VARCHAR},
+      id_card_begin_date = #{idCardBeginDate,jdbcType=TIMESTAMP},
+      id_card_end_date = #{idCardEndDate,jdbcType=TIMESTAMP},
+      id_card_type = #{idCardType,jdbcType=VARCHAR},
+      residence_province_code = #{residenceProvinceCode,jdbcType=VARCHAR},
+      residence_city_code = #{residenceCityCode,jdbcType=VARCHAR},
+      residence_district_code = #{residenceDistrictCode,jdbcType=VARCHAR},
+      residence_address = #{residenceAddress,jdbcType=VARCHAR},
+      nation = #{nation,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      nationality = #{nationality,jdbcType=VARCHAR},
+      business_license_begin_date = #{businessLicenseBeginDate,jdbcType=TIMESTAMP},
+      business_license_end_date = #{businessLicenseEndDate,jdbcType=TIMESTAMP},
+      business_license_no = #{businessLicenseNo,jdbcType=VARCHAR},
+      province_code = #{provinceCode,jdbcType=VARCHAR},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      district_code = #{districtCode,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      id_card_province_code = #{idCardProvinceCode,jdbcType=VARCHAR},
+      id_card_city_code = #{idCardCityCode,jdbcType=VARCHAR},
+      id_card_district_code = #{idCardDistrictCode,jdbcType=VARCHAR},
+      id_card_address = #{idCardAddress,jdbcType=VARCHAR},
+      longitude = #{longitude,jdbcType=VARCHAR},
+      latitude = #{latitude,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      bank_card_name = #{bankCardName,jdbcType=VARCHAR},
+      bank_card_no = #{bankCardNo,jdbcType=VARCHAR},
+      bank_no = #{bankNo,jdbcType=VARCHAR},
+      cnaps_no = #{cnapsNo,jdbcType=VARCHAR},
+      sub_branch_bank_name = #{subBranchBankName,jdbcType=VARCHAR},
+      bank_phone = #{bankPhone,jdbcType=VARCHAR},
+      deposit_bank_province_code = #{depositBankProvinceCode,jdbcType=VARCHAR},
+      deposit_bank_city_code = #{depositBankCityCode,jdbcType=VARCHAR},
+      service_phone = #{servicePhone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      industry_type = #{industryType,jdbcType=VARCHAR},
+      contact_name = #{contactName,jdbcType=VARCHAR},
+      contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      contact_email = #{contactEmail,jdbcType=VARCHAR},
+      contact_id_card_type = #{contactIdCardType,jdbcType=VARCHAR},
+      contact_id_card_no = #{contactIdCardNo,jdbcType=VARCHAR},
+      company_name = #{companyName,jdbcType=VARCHAR},
+      company_address = #{companyAddress,jdbcType=VARCHAR},
+      company_nature = #{companyNature,jdbcType=VARCHAR},
+      user_avatar_img = #{userAvatarImg,jdbcType=VARCHAR},
+      business_license_img = #{businessLicenseImg,jdbcType=VARCHAR},
+      protocol_first_img = #{protocolFirstImg,jdbcType=VARCHAR},
+      protocol_last_img = #{protocolLastImg,jdbcType=VARCHAR},
+      id_card_front_img = #{idCardFrontImg,jdbcType=VARCHAR},
+      id_card_back_img = #{idCardBackImg,jdbcType=VARCHAR},
+      id_card_hand_img = #{idCardHandImg,jdbcType=VARCHAR},
+      store_img = #{storeImg,jdbcType=VARCHAR},
+      bank_license_img = #{bankLicenseImg,jdbcType=VARCHAR},
+      ic_net_screen_shot_img = #{icNetScreenShotImg,jdbcType=VARCHAR},
+      icp_img = #{icpImg,jdbcType=VARCHAR},
+      place_img = #{placeImg,jdbcType=VARCHAR},
+      bank_card_front_img = #{bankCardFrontImg,jdbcType=VARCHAR},
+      bank_card_back_img = #{bankCardBackImg,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+<!--auto generated by MybatisCodeHelper on 2020-06-18-->
+  <select id="selectByUserId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from merchant_info
+        where user_id=#{userId,jdbcType=BIGINT}
+    </select>
+</mapper>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyoufu.pay.mapper.BankInfoMapper">
+  <resultMap id="BaseResultMap" type="com.heyoufu.pay.model.BankInfo">
+    <!--@mbg.generated-->
+    <!--@Table bank_info-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="bank_id" jdbcType="VARCHAR" property="bankId" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="bank_branch_name" jdbcType="VARCHAR" property="bankBranchName" />
+    <result column="bank_unite_code" jdbcType="VARCHAR" property="bankUniteCode" />
+    <result column="province_id" jdbcType="INTEGER" property="provinceId" />
+    <result column="province " jdbcType="VARCHAR" property="province" />
+    <result column="city_id" jdbcType="INTEGER" property="cityId" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, bank_id, bank_name, bank_branch_name, bank_unite_code, province_id, "province ", 
+    city_id, city
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from bank_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from bank_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.heyoufu.pay.model.BankInfo">
+    <!--@mbg.generated-->
+    insert into bank_info (id, bank_id, bank_name, 
+      bank_branch_name, bank_unite_code, province_id, 
+      "province ", city_id, city
+      )
+    values (#{id,jdbcType=BIGINT}, #{bankId,jdbcType=VARCHAR}, #{bankName,jdbcType=VARCHAR}, 
+      #{bankBranchName,jdbcType=VARCHAR}, #{bankUniteCode,jdbcType=VARCHAR}, #{provinceId,jdbcType=INTEGER}, 
+      #{province,jdbcType=VARCHAR}, #{cityId,jdbcType=INTEGER}, #{city,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.heyoufu.pay.model.BankInfo">
+    <!--@mbg.generated-->
+    insert into bank_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="bankId != null">
+        bank_id,
+      </if>
+      <if test="bankName != null">
+        bank_name,
+      </if>
+      <if test="bankBranchName != null">
+        bank_branch_name,
+      </if>
+      <if test="bankUniteCode != null">
+        bank_unite_code,
+      </if>
+      <if test="provinceId != null">
+        province_id,
+      </if>
+      <if test="province != null">
+        "province ",
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="bankId != null">
+        #{bankId,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankBranchName != null">
+        #{bankBranchName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankUniteCode != null">
+        #{bankUniteCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.heyoufu.pay.model.BankInfo">
+    <!--@mbg.generated-->
+    update bank_info
+    <set>
+      <if test="bankId != null">
+        bank_id = #{bankId,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        bank_name = #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankBranchName != null">
+        bank_branch_name = #{bankBranchName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankUniteCode != null">
+        bank_unite_code = #{bankUniteCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        province_id = #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        "province " = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        city_id = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.heyoufu.pay.model.BankInfo">
+    <!--@mbg.generated-->
+    update bank_info
+    set bank_id = #{bankId,jdbcType=VARCHAR},
+      bank_name = #{bankName,jdbcType=VARCHAR},
+      bank_branch_name = #{bankBranchName,jdbcType=VARCHAR},
+      bank_unite_code = #{bankUniteCode,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=INTEGER},
+      "province " = #{province,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=INTEGER},
+      city = #{city,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

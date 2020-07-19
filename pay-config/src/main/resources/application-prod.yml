@@ -1,0 +1,6 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://pay-register:8001/eureka/
+  instance:
+    prefer-ip-address: true

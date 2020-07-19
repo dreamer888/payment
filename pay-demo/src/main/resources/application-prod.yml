@@ -1,0 +1,18 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://pay-register:8001/eureka/
+    registry-fetch-interval-seconds: 10
+  instance:
+    prefer-ip-address: true
+
+  datasource:
+    url: jdbc:postgresql://www.dreammm.net:25432/hefutong
+    username: postgres
+    password: Az123..
+
+auth:
+  host: http://pay-authserver
+  # 服务端口号
+  port: 9000
+  # 也 可以 通过 配置中心 进行配置

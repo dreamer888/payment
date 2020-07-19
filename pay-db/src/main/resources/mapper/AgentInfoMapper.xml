@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyoufu.pay.mapper.AgentInfoMapper">
+  <resultMap id="BaseResultMap" type="com.heyoufu.pay.model.AgentInfo">
+    <!--@mbg.generated-->
+    <!--@Table agent_info-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="agent_no" jdbcType="VARCHAR" property="agentNo" />
+    <result column="agent_name" jdbcType="VARCHAR" property="agentName" />
+    <result column="agent_type" jdbcType="VARCHAR" property="agentType" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="company_province" jdbcType="VARCHAR" property="companyProvince" />
+    <result column="company_city " jdbcType="VARCHAR" property="companyCity" />
+    <result column="company_area" jdbcType="VARCHAR" property="companyArea" />
+    <result column="company_street " jdbcType="VARCHAR" property="companyStreet" />
+    <result column="representative_name " jdbcType="VARCHAR" property="representativeName" />
+    <result column="representative_id_card " jdbcType="VARCHAR" property="representativeIdCard" />
+    <result column="representative_phone" jdbcType="VARCHAR" property="representativePhone" />
+    <result column="bank_account_no" jdbcType="VARCHAR" property="bankAccountNo" />
+    <result column="bank_account_name " jdbcType="VARCHAR" property="bankAccountName" />
+    <result column="bank_name " jdbcType="VARCHAR" property="bankName" />
+    <result column="contacts_province" jdbcType="VARCHAR" property="contactsProvince" />
+    <result column="contacts_city" jdbcType="VARCHAR" property="contactsCity" />
+    <result column="contacts_area" jdbcType="VARCHAR" property="contactsArea" />
+    <result column="channel_street" jdbcType="VARCHAR" property="channelStreet" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, agent_no, agent_name, agent_type, company_name, company_province, "company_city ", 
+    company_area, "company_street ", "representative_name ", "representative_id_card ", 
+    representative_phone, bank_account_no, "bank_account_name ", "bank_name ", contacts_province, 
+    contacts_city, contacts_area, channel_street, create_user, create_time, update_user, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from agent_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from agent_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.heyoufu.pay.model.AgentInfo">
+    <!--@mbg.generated-->
+    insert into agent_info (id, agent_no, agent_name, 
+      agent_type, company_name, company_province, 
+      "company_city ", company_area, "company_street ", 
+      "representative_name ", "representative_id_card ", 
+      representative_phone, bank_account_no, "bank_account_name ", 
+      "bank_name ", contacts_province, contacts_city, 
+      contacts_area, channel_street, create_user, 
+      create_time, update_user, update_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{agentNo,jdbcType=VARCHAR}, #{agentName,jdbcType=VARCHAR}, 
+      #{agentType,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}, #{companyProvince,jdbcType=VARCHAR}, 
+      #{companyCity,jdbcType=VARCHAR}, #{companyArea,jdbcType=VARCHAR}, #{companyStreet,jdbcType=VARCHAR}, 
+      #{representativeName,jdbcType=VARCHAR}, #{representativeIdCard,jdbcType=VARCHAR}, 
+      #{representativePhone,jdbcType=VARCHAR}, #{bankAccountNo,jdbcType=VARCHAR}, #{bankAccountName,jdbcType=VARCHAR}, 
+      #{bankName,jdbcType=VARCHAR}, #{contactsProvince,jdbcType=VARCHAR}, #{contactsCity,jdbcType=VARCHAR}, 
+      #{contactsArea,jdbcType=VARCHAR}, #{channelStreet,jdbcType=VARCHAR}, #{createUser,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.heyoufu.pay.model.AgentInfo">
+    <!--@mbg.generated-->
+    insert into agent_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="agentNo != null">
+        agent_no,
+      </if>
+      <if test="agentName != null">
+        agent_name,
+      </if>
+      <if test="agentType != null">
+        agent_type,
+      </if>
+      <if test="companyName != null">
+        company_name,
+      </if>
+      <if test="companyProvince != null">
+        company_province,
+      </if>
+      <if test="companyCity != null">
+        "company_city ",
+      </if>
+      <if test="companyArea != null">
+        company_area,
+      </if>
+      <if test="companyStreet != null">
+        "company_street ",
+      </if>
+      <if test="representativeName != null">
+        "representative_name ",
+      </if>
+      <if test="representativeIdCard != null">
+        "representative_id_card ",
+      </if>
+      <if test="representativePhone != null">
+        representative_phone,
+      </if>
+      <if test="bankAccountNo != null">
+        bank_account_no,
+      </if>
+      <if test="bankAccountName != null">
+        "bank_account_name ",
+      </if>
+      <if test="bankName != null">
+        "bank_name ",
+      </if>
+      <if test="contactsProvince != null">
+        contacts_province,
+      </if>
+      <if test="contactsCity != null">
+        contacts_city,
+      </if>
+      <if test="contactsArea != null">
+        contacts_area,
+      </if>
+      <if test="channelStreet != null">
+        channel_street,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="agentNo != null">
+        #{agentNo,jdbcType=VARCHAR},
+      </if>
+      <if test="agentName != null">
+        #{agentName,jdbcType=VARCHAR},
+      </if>
+      <if test="agentType != null">
+        #{agentType,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyProvince != null">
+        #{companyProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="companyCity != null">
+        #{companyCity,jdbcType=VARCHAR},
+      </if>
+      <if test="companyArea != null">
+        #{companyArea,jdbcType=VARCHAR},
+      </if>
+      <if test="companyStreet != null">
+        #{companyStreet,jdbcType=VARCHAR},
+      </if>
+      <if test="representativeName != null">
+        #{representativeName,jdbcType=VARCHAR},
+      </if>
+      <if test="representativeIdCard != null">
+        #{representativeIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="representativePhone != null">
+        #{representativePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountNo != null">
+        #{bankAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountName != null">
+        #{bankAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsProvince != null">
+        #{contactsProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsCity != null">
+        #{contactsCity,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsArea != null">
+        #{contactsArea,jdbcType=VARCHAR},
+      </if>
+      <if test="channelStreet != null">
+        #{channelStreet,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.heyoufu.pay.model.AgentInfo">
+    <!--@mbg.generated-->
+    update agent_info
+    <set>
+      <if test="agentNo != null">
+        agent_no = #{agentNo,jdbcType=VARCHAR},
+      </if>
+      <if test="agentName != null">
+        agent_name = #{agentName,jdbcType=VARCHAR},
+      </if>
+      <if test="agentType != null">
+        agent_type = #{agentType,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null">
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyProvince != null">
+        company_province = #{companyProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="companyCity != null">
+        "company_city " = #{companyCity,jdbcType=VARCHAR},
+      </if>
+      <if test="companyArea != null">
+        company_area = #{companyArea,jdbcType=VARCHAR},
+      </if>
+      <if test="companyStreet != null">
+        "company_street " = #{companyStreet,jdbcType=VARCHAR},
+      </if>
+      <if test="representativeName != null">
+        "representative_name " = #{representativeName,jdbcType=VARCHAR},
+      </if>
+      <if test="representativeIdCard != null">
+        "representative_id_card " = #{representativeIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="representativePhone != null">
+        representative_phone = #{representativePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountNo != null">
+        bank_account_no = #{bankAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountName != null">
+        "bank_account_name " = #{bankAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        "bank_name " = #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsProvince != null">
+        contacts_province = #{contactsProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsCity != null">
+        contacts_city = #{contactsCity,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsArea != null">
+        contacts_area = #{contactsArea,jdbcType=VARCHAR},
+      </if>
+      <if test="channelStreet != null">
+        channel_street = #{channelStreet,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.heyoufu.pay.model.AgentInfo">
+    <!--@mbg.generated-->
+    update agent_info
+    set agent_no = #{agentNo,jdbcType=VARCHAR},
+      agent_name = #{agentName,jdbcType=VARCHAR},
+      agent_type = #{agentType,jdbcType=VARCHAR},
+      company_name = #{companyName,jdbcType=VARCHAR},
+      company_province = #{companyProvince,jdbcType=VARCHAR},
+      "company_city " = #{companyCity,jdbcType=VARCHAR},
+      company_area = #{companyArea,jdbcType=VARCHAR},
+      "company_street " = #{companyStreet,jdbcType=VARCHAR},
+      "representative_name " = #{representativeName,jdbcType=VARCHAR},
+      "representative_id_card " = #{representativeIdCard,jdbcType=VARCHAR},
+      representative_phone = #{representativePhone,jdbcType=VARCHAR},
+      bank_account_no = #{bankAccountNo,jdbcType=VARCHAR},
+      "bank_account_name " = #{bankAccountName,jdbcType=VARCHAR},
+      "bank_name " = #{bankName,jdbcType=VARCHAR},
+      contacts_province = #{contactsProvince,jdbcType=VARCHAR},
+      contacts_city = #{contactsCity,jdbcType=VARCHAR},
+      contacts_area = #{contactsArea,jdbcType=VARCHAR},
+      channel_street = #{channelStreet,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <!--auto generated by MybatisCodeHelper on 2020-06-12-->
+  <select id="selectByAgentNo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from agent_info
+    where agent_no=#{agentNo,jdbcType=VARCHAR}
+  </select>
+</mapper>

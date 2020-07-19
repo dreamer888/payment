@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyoufu.pay.mapper.LogLoginMapper">
+  <resultMap id="BaseResultMap" type="com.heyoufu.pay.model.LogLogin">
+    <!--@mbg.generated-->
+    <!--@Table log_login-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="login_user" jdbcType="VARCHAR" property="loginUser" />
+    <result column="login_ip" jdbcType="VARCHAR" property="loginIp" />
+    <result column="login_location" jdbcType="VARCHAR" property="loginLocation" />
+    <result column="login_msg" jdbcType="VARCHAR" property="loginMsg" />
+    <result column="login_time" jdbcType="TIMESTAMP" property="loginTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, login_user, login_ip, login_location, login_msg, login_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from log_login
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from log_login
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.heyoufu.pay.model.LogLogin">
+    <!--@mbg.generated-->
+    insert into log_login (id, login_user, login_ip, 
+      login_location, login_msg, login_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{loginUser,jdbcType=VARCHAR}, #{loginIp,jdbcType=VARCHAR}, 
+      #{loginLocation,jdbcType=VARCHAR}, #{loginMsg,jdbcType=VARCHAR}, #{loginTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.heyoufu.pay.model.LogLogin">
+    <!--@mbg.generated-->
+    insert into log_login
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="loginUser != null">
+        login_user,
+      </if>
+      <if test="loginIp != null">
+        login_ip,
+      </if>
+      <if test="loginLocation != null">
+        login_location,
+      </if>
+      <if test="loginMsg != null">
+        login_msg,
+      </if>
+      <if test="loginTime != null">
+        login_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="loginUser != null">
+        #{loginUser,jdbcType=VARCHAR},
+      </if>
+      <if test="loginIp != null">
+        #{loginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="loginLocation != null">
+        #{loginLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="loginMsg != null">
+        #{loginMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="loginTime != null">
+        #{loginTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.heyoufu.pay.model.LogLogin">
+    <!--@mbg.generated-->
+    update log_login
+    <set>
+      <if test="loginUser != null">
+        login_user = #{loginUser,jdbcType=VARCHAR},
+      </if>
+      <if test="loginIp != null">
+        login_ip = #{loginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="loginLocation != null">
+        login_location = #{loginLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="loginMsg != null">
+        login_msg = #{loginMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="loginTime != null">
+        login_time = #{loginTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.heyoufu.pay.model.LogLogin">
+    <!--@mbg.generated-->
+    update log_login
+    set login_user = #{loginUser,jdbcType=VARCHAR},
+      login_ip = #{loginIp,jdbcType=VARCHAR},
+      login_location = #{loginLocation,jdbcType=VARCHAR},
+      login_msg = #{loginMsg,jdbcType=VARCHAR},
+      login_time = #{loginTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

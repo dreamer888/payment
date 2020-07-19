@@ -1,0 +1,69 @@
+server:
+  port: 8201
+spring:
+  application:
+    name: pay-gateway
+  profiles:
+    active: dev
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true #使用小写service-id
+      routes:
+        - id: 认证服务
+          uri: lb://pay-auth-server
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+        - id: DEMO服务
+          uri: lb://pay-demo
+          predicates:
+            #- Path=/api/**
+            - Path=/demo/**
+          filters:
+            - StripPrefix=1
+
+        - id: channel服务
+          uri: lb://pay-channel
+          predicates:
+            - Path=/channel/**
+          filters:
+            - StripPrefix=1
+
+        - id: agent服务
+          uri: lb://pay-agent
+          predicates:
+            - Path=/agent/**
+          filters:
+            - StripPrefix=1
+
+        - id: merchant服务
+          uri: lb://pay-merchant
+          predicates:
+            - Path=/merchant/**
+          filters:
+            - StripPrefix=1
+
+
+        - id: bigdata服务
+          uri: lb://pay-bigdata
+          predicates:
+            - Path=/bigdata/**
+          filters:
+            - StripPrefix=1
+
+#开启SpringBoot Admin的监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

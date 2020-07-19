@@ -1,0 +1,22 @@
+spring:
+  # 数据库配置
+  datasource:
+    url: jdbc:postgresql://192.168.1.230:25432/hefutong
+    username: postgres
+    password: Az123..
+  # redis配置
+  redis:
+    database: 2
+    host: www.dreammm.net
+    port: 26379
+    password: Az741
+#  data:
+#    elasticsearch:
+#      cluster-name: docker-cluster
+#      cluster-nodes: 192.168.1.100:9300
+# 注册到 Eureka 中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.100:8001/eureka/
+    registry-fetch-interval-seconds: 10

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyoufu.pay.mapper.UserServiceMapper">
+  <resultMap id="BaseResultMap" type="com.heyoufu.pay.model.UserService">
+    <!--@mbg.generated-->
+    <!--@Table user_service-->
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="service_id" jdbcType="BIGINT" property="serviceId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    user_id, service_id
+  </sql>
+  <insert id="insert" parameterType="com.heyoufu.pay.model.UserService">
+    <!--@mbg.generated-->
+    insert into user_service (user_id, service_id)
+    values (#{userId,jdbcType=BIGINT}, #{serviceId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.heyoufu.pay.model.UserService">
+    <!--@mbg.generated-->
+    insert into user_service
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="serviceId != null">
+        service_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="serviceId != null">
+        #{serviceId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

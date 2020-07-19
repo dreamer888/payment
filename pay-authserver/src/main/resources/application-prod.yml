@@ -1,0 +1,12 @@
+spring:
+  # 数据库配置
+  datasource:
+    url: jdbc:postgresql://192.168.1.230:25432/hefutong
+    username: postgres
+    password: Az123..
+  # redis配置
+  redis:
+    database: 2
+    host: www.dreammm.net
+    port: 26379
+    password: Az741

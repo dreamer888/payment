@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyoufu.pay.mapper.PermInfoMapper">
+  <resultMap id="BaseResultMap" type="com.heyoufu.pay.model.PermInfo">
+    <!--@mbg.generated-->
+    <!--@Table perm_info-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="sup_id" jdbcType="BIGINT" property="supId" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+    <result column="component" jdbcType="VARCHAR" property="component" />
+    <result column="icon_type" jdbcType="VARCHAR" property="iconType" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="sequence" jdbcType="NUMERIC" property="sequence" />
+    <result column="hidden" jdbcType="BOOLEAN" property="hidden" />
+    <result column="show" jdbcType="BOOLEAN" property="show" />
+    <result column="enabled" jdbcType="BOOLEAN" property="enabled" />
+    <result column="cache" jdbcType="BOOLEAN" property="cache" />
+    <result column="affix" jdbcType="BOOLEAN" property="affix" />
+    <result column="breadcrumb" jdbcType="BOOLEAN" property="breadcrumb" />
+    <result column="redirect" jdbcType="VARCHAR" property="redirect" />
+    <result column="active" jdbcType="VARCHAR" property="active" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, sup_id, "level", "type", title, "name", "path", component, icon_type, icon, "sequence", 
+    hidden, "show", enabled, "cache", affix, breadcrumb, redirect, active, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from perm_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from perm_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.heyoufu.pay.model.PermInfo">
+    <!--@mbg.generated-->
+    insert into perm_info (id, sup_id, "level", 
+      "type", title, "name", 
+      "path", component, icon_type, 
+      icon, "sequence", hidden, 
+      "show", enabled, "cache", 
+      affix, breadcrumb, redirect, 
+      active, create_time, update_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{supId,jdbcType=BIGINT}, #{level,jdbcType=INTEGER}, 
+      #{type,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{path,jdbcType=VARCHAR}, #{component,jdbcType=VARCHAR}, #{iconType,jdbcType=VARCHAR}, 
+      #{icon,jdbcType=VARCHAR}, #{sequence,jdbcType=NUMERIC}, #{hidden,jdbcType=BOOLEAN}, 
+      #{show,jdbcType=BOOLEAN}, #{enabled,jdbcType=BOOLEAN}, #{cache,jdbcType=BOOLEAN}, 
+      #{affix,jdbcType=BOOLEAN}, #{breadcrumb,jdbcType=BOOLEAN}, #{redirect,jdbcType=VARCHAR}, 
+      #{active,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.heyoufu.pay.model.PermInfo">
+    <!--@mbg.generated-->
+    insert into perm_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="supId != null">
+        sup_id,
+      </if>
+      <if test="level != null">
+        "level",
+      </if>
+      <if test="type != null">
+        "type",
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="name != null">
+        "name",
+      </if>
+      <if test="path != null">
+        "path",
+      </if>
+      <if test="component != null">
+        component,
+      </if>
+      <if test="iconType != null">
+        icon_type,
+      </if>
+      <if test="icon != null">
+        icon,
+      </if>
+      <if test="sequence != null">
+        "sequence",
+      </if>
+      <if test="hidden != null">
+        hidden,
+      </if>
+      <if test="show != null">
+        "show",
+      </if>
+      <if test="enabled != null">
+        enabled,
+      </if>
+      <if test="cache != null">
+        "cache",
+      </if>
+      <if test="affix != null">
+        affix,
+      </if>
+      <if test="breadcrumb != null">
+        breadcrumb,
+      </if>
+      <if test="redirect != null">
+        redirect,
+      </if>
+      <if test="active != null">
+        active,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="supId != null">
+        #{supId,jdbcType=BIGINT},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="component != null">
+        #{component,jdbcType=VARCHAR},
+      </if>
+      <if test="iconType != null">
+        #{iconType,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="sequence != null">
+        #{sequence,jdbcType=NUMERIC},
+      </if>
+      <if test="hidden != null">
+        #{hidden,jdbcType=BOOLEAN},
+      </if>
+      <if test="show != null">
+        #{show,jdbcType=BOOLEAN},
+      </if>
+      <if test="enabled != null">
+        #{enabled,jdbcType=BOOLEAN},
+      </if>
+      <if test="cache != null">
+        #{cache,jdbcType=BOOLEAN},
+      </if>
+      <if test="affix != null">
+        #{affix,jdbcType=BOOLEAN},
+      </if>
+      <if test="breadcrumb != null">
+        #{breadcrumb,jdbcType=BOOLEAN},
+      </if>
+      <if test="redirect != null">
+        #{redirect,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null">
+        #{active,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.heyoufu.pay.model.PermInfo">
+    <!--@mbg.generated-->
+    update perm_info
+    <set>
+      <if test="supId != null">
+        sup_id = #{supId,jdbcType=BIGINT},
+      </if>
+      <if test="level != null">
+        "level" = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        "type" = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        "name" = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        "path" = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="component != null">
+        component = #{component,jdbcType=VARCHAR},
+      </if>
+      <if test="iconType != null">
+        icon_type = #{iconType,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        icon = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="sequence != null">
+        "sequence" = #{sequence,jdbcType=NUMERIC},
+      </if>
+      <if test="hidden != null">
+        hidden = #{hidden,jdbcType=BOOLEAN},
+      </if>
+      <if test="show != null">
+        "show" = #{show,jdbcType=BOOLEAN},
+      </if>
+      <if test="enabled != null">
+        enabled = #{enabled,jdbcType=BOOLEAN},
+      </if>
+      <if test="cache != null">
+        "cache" = #{cache,jdbcType=BOOLEAN},
+      </if>
+      <if test="affix != null">
+        affix = #{affix,jdbcType=BOOLEAN},
+      </if>
+      <if test="breadcrumb != null">
+        breadcrumb = #{breadcrumb,jdbcType=BOOLEAN},
+      </if>
+      <if test="redirect != null">
+        redirect = #{redirect,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null">
+        active = #{active,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.heyoufu.pay.model.PermInfo">
+    <!--@mbg.generated-->
+    update perm_info
+    set sup_id = #{supId,jdbcType=BIGINT},
+      "level" = #{level,jdbcType=INTEGER},
+      "type" = #{type,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      "name" = #{name,jdbcType=VARCHAR},
+      "path" = #{path,jdbcType=VARCHAR},
+      component = #{component,jdbcType=VARCHAR},
+      icon_type = #{iconType,jdbcType=VARCHAR},
+      icon = #{icon,jdbcType=VARCHAR},
+      "sequence" = #{sequence,jdbcType=NUMERIC},
+      hidden = #{hidden,jdbcType=BOOLEAN},
+      "show" = #{show,jdbcType=BOOLEAN},
+      enabled = #{enabled,jdbcType=BOOLEAN},
+      "cache" = #{cache,jdbcType=BOOLEAN},
+      affix = #{affix,jdbcType=BOOLEAN},
+      breadcrumb = #{breadcrumb,jdbcType=BOOLEAN},
+      redirect = #{redirect,jdbcType=VARCHAR},
+      active = #{active,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

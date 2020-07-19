@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyoufu.pay.mapper.MerchantReviewUpstreamMapper">
+  <resultMap id="BaseResultMap" type="com.heyoufu.pay.model.MerchantReviewUpstream">
+    <!--@mbg.generated-->
+    <!--@Table merchant_review_upstream-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="system_review_id" jdbcType="BIGINT" property="systemReviewId" />
+    <result column="upstream_channel_id" jdbcType="BIGINT" property="upstreamChannelId" />
+    <result column="upstream_review_status" jdbcType="VARCHAR" property="upstreamReviewStatus" />
+    <result column="system_review_status" jdbcType="VARCHAR" property="systemReviewStatus" />
+    <result column="review_result" jdbcType="VARCHAR" property="reviewResult" />
+    <result column="channel_merchant_no" jdbcType="VARCHAR" property="channelMerchantNo" />
+    <result column="channel_batch_no" jdbcType="VARCHAR" property="channelBatchNo" />
+    <result column="create_user" jdbcType="BIGINT" property="createUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_user" jdbcType="BIGINT" property="updateUser" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, system_review_id, upstream_channel_id, upstream_review_status, system_review_status, 
+    review_result, channel_merchant_no, channel_batch_no, create_user, create_time, update_user, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from merchant_review_upstream
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from merchant_review_upstream
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.heyoufu.pay.model.MerchantReviewUpstream">
+    <!--@mbg.generated-->
+    insert into merchant_review_upstream (id, system_review_id, upstream_channel_id, 
+      upstream_review_status, system_review_status, 
+      review_result, channel_merchant_no, channel_batch_no, 
+      create_user, create_time, update_user, 
+      update_time)
+    values (#{id,jdbcType=BIGINT}, #{systemReviewId,jdbcType=BIGINT}, #{upstreamChannelId,jdbcType=BIGINT}, 
+      #{upstreamReviewStatus,jdbcType=VARCHAR}, #{systemReviewStatus,jdbcType=VARCHAR}, 
+      #{reviewResult,jdbcType=VARCHAR}, #{channelMerchantNo,jdbcType=VARCHAR}, #{channelBatchNo,jdbcType=VARCHAR}, 
+      #{createUser,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.heyoufu.pay.model.MerchantReviewUpstream">
+    <!--@mbg.generated-->
+    insert into merchant_review_upstream
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="systemReviewId != null">
+        system_review_id,
+      </if>
+      <if test="upstreamChannelId != null">
+        upstream_channel_id,
+      </if>
+      <if test="upstreamReviewStatus != null">
+        upstream_review_status,
+      </if>
+      <if test="systemReviewStatus != null">
+        system_review_status,
+      </if>
+      <if test="reviewResult != null">
+        review_result,
+      </if>
+      <if test="channelMerchantNo != null">
+        channel_merchant_no,
+      </if>
+      <if test="channelBatchNo != null">
+        channel_batch_no,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="systemReviewId != null">
+        #{systemReviewId,jdbcType=BIGINT},
+      </if>
+      <if test="upstreamChannelId != null">
+        #{upstreamChannelId,jdbcType=BIGINT},
+      </if>
+      <if test="upstreamReviewStatus != null">
+        #{upstreamReviewStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="systemReviewStatus != null">
+        #{systemReviewStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewResult != null">
+        #{reviewResult,jdbcType=VARCHAR},
+      </if>
+      <if test="channelMerchantNo != null">
+        #{channelMerchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="channelBatchNo != null">
+        #{channelBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.heyoufu.pay.model.MerchantReviewUpstream">
+    <!--@mbg.generated-->
+    update merchant_review_upstream
+    <set>
+      <if test="systemReviewId != null">
+        system_review_id = #{systemReviewId,jdbcType=BIGINT},
+      </if>
+      <if test="upstreamChannelId != null">
+        upstream_channel_id = #{upstreamChannelId,jdbcType=BIGINT},
+      </if>
+      <if test="upstreamReviewStatus != null">
+        upstream_review_status = #{upstreamReviewStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="systemReviewStatus != null">
+        system_review_status = #{systemReviewStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewResult != null">
+        review_result = #{reviewResult,jdbcType=VARCHAR},
+      </if>
+      <if test="channelMerchantNo != null">
+        channel_merchant_no = #{channelMerchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="channelBatchNo != null">
+        channel_batch_no = #{channelBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.heyoufu.pay.model.MerchantReviewUpstream">
+    <!--@mbg.generated-->
+    update merchant_review_upstream
+    set system_review_id = #{systemReviewId,jdbcType=BIGINT},
+      upstream_channel_id = #{upstreamChannelId,jdbcType=BIGINT},
+      upstream_review_status = #{upstreamReviewStatus,jdbcType=VARCHAR},
+      system_review_status = #{systemReviewStatus,jdbcType=VARCHAR},
+      review_result = #{reviewResult,jdbcType=VARCHAR},
+      channel_merchant_no = #{channelMerchantNo,jdbcType=VARCHAR},
+      channel_batch_no = #{channelBatchNo,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

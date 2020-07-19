@@ -1,0 +1,10 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+    registry-fetch-interval-seconds: 10
+
+auth:
+  host: localhost
+  # 服务端口号
+  port: 9000

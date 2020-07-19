@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyoufu.pay.mapper.CompanyNatureMapper">
+  <resultMap id="BaseResultMap" type="com.heyoufu.pay.model.CompanyNature">
+    <!--@mbg.generated-->
+    <!--@Table company_nature-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_nature_id" jdbcType="VARCHAR" property="companyNatureId" />
+    <result column="company_nature_name" jdbcType="VARCHAR" property="companyNatureName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, company_nature_id, company_nature_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from company_nature
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from company_nature
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.heyoufu.pay.model.CompanyNature">
+    <!--@mbg.generated-->
+    insert into company_nature (id, company_nature_id, company_nature_name
+      )
+    values (#{id,jdbcType=BIGINT}, #{companyNatureId,jdbcType=VARCHAR}, #{companyNatureName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.heyoufu.pay.model.CompanyNature">
+    <!--@mbg.generated-->
+    insert into company_nature
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="companyNatureId != null">
+        company_nature_id,
+      </if>
+      <if test="companyNatureName != null">
+        company_nature_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="companyNatureId != null">
+        #{companyNatureId,jdbcType=VARCHAR},
+      </if>
+      <if test="companyNatureName != null">
+        #{companyNatureName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.heyoufu.pay.model.CompanyNature">
+    <!--@mbg.generated-->
+    update company_nature
+    <set>
+      <if test="companyNatureId != null">
+        company_nature_id = #{companyNatureId,jdbcType=VARCHAR},
+      </if>
+      <if test="companyNatureName != null">
+        company_nature_name = #{companyNatureName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.heyoufu.pay.model.CompanyNature">
+    <!--@mbg.generated-->
+    update company_nature
+    set company_nature_id = #{companyNatureId,jdbcType=VARCHAR},
+      company_nature_name = #{companyNatureName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
